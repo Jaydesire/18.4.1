@@ -13,8 +13,10 @@ public class Specialist extends Thread {
         }
 
         while (true) {
-            if (!Main.calls.isEmpty()) {
-                answerTheCall(Main.calls.poll());
+
+            Call call = Main.calls.poll();
+            if (call != null) {
+                answerTheCall(call);
             } else {
                 break;
             }
